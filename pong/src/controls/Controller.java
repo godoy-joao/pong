@@ -9,6 +9,9 @@ public class Controller {
 	public static double ballVerticalSpeed = 1.0, ballHorizontalSpeed = 1.0;
 	public static double rightSpeedMultiplier = 1.0, leftSpeedMultiplier = 1.0, ballVerticalSpeedMultiplier = 1.0,
 			ballHorizontalSpeedMultiplier = 1.0;
+	public static int rightHeight = GamePanel.HEIGHT/5 + 50, leftHeight = GamePanel.HEIGHT/5 + 50;
+	
+	
 
 	public void tick(boolean w, boolean s, boolean up, boolean down) {
 		if (w && !s) {
