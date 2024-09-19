@@ -4,7 +4,8 @@ import main.GamePanel;
 
 public class Controller {
 
-	public static int ballX, ballY, leftY, rightY, ballVerticalDirection, ballHorizontalDirection;
+	public static double ballX = GamePanel.WIDTH / 2 - 10, ballY = GamePanel.HEIGHT / 2 - 10, leftY, rightY, ballSize = 20;
+	public static boolean ballVerticalDirection = true, ballHorizontalDirection = true;
 	public static final int leftX = 50, rightX = GamePanel.WIDTH - 60;
 	public static double ballVerticalSpeed = 1.0, ballHorizontalSpeed = 1.0;
 	public static double rightSpeedMultiplier = 1.0, leftSpeedMultiplier = 1.0, ballVerticalSpeedMultiplier = 1.0,
@@ -14,37 +15,22 @@ public class Controller {
 	
 
 	public void tick(boolean w, boolean s, boolean up, boolean down) {
-		if (w && !s) {
-			leftY -= 2 * leftSpeedMultiplier;
+		if (w && !s && leftY !=) {
+			leftY -= (2 * leftSpeedMultiplier) /30000;
 		}
 
 		if (s && !w) {
-			leftY += 2 * leftSpeedMultiplier;
+			leftY += (2 * leftSpeedMultiplier) /30000;
 		}
 
 		if (up && !down) {
-			rightY -= 2 * rightSpeedMultiplier;
+			rightY -= (2 * rightSpeedMultiplier) /30000;
 		}
 
 		if (down && !up) {
-			rightY += 2 * rightSpeedMultiplier;
+			rightY += (2 * rightSpeedMultiplier) /30000;
 		}
 
-		if (ballVerticalDirection == 1) {
-			ballY += ballVerticalSpeedMultiplier * ballVerticalSpeed;
-		}
-
-		if (ballVerticalDirection == 0) {
-			ballY -= ballVerticalSpeedMultiplier * ballVerticalSpeed;
-		}
-
-		if (ballHorizontalDirection == 1) {
-			ballY += ballHorizontalSpeedMultiplier * ballHorizontalSpeed;
-		}
-
-		if (ballHorizontalDirection == 0) {
-			ballY += ballHorizontalSpeedMultiplier * ballHorizontalSpeed;
-		}
 	}
 
 }

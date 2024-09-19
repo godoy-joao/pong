@@ -6,11 +6,13 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.swing.JPanel;
+
+import controls.Controller;
 import controls.InputHandler;
+import entity.Ball;
 import entity.Player;
 
 public class GamePanel extends JPanel implements Runnable {
@@ -22,6 +24,7 @@ public class GamePanel extends JPanel implements Runnable {
 	public final String TITLE = "Pong";
 	public static final int WIDTH = 800, HEIGHT = 600;
 	public boolean running;
+	public Ball ball;
 
 	private Thread thread;
 	private InputHandler handler;
@@ -69,16 +72,19 @@ public class GamePanel extends JPanel implements Runnable {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Player p = new Player();
+		Ball ball = new Ball();
 		Graphics2D g2 = (Graphics2D) g;
-		g2.fill(getBounds());
+		g2.setColor(Color.BLACK);
+		g2.fillRect(0, 0, WIDTH, HEIGHT);
 		List<Rectangle> players = p.tick();
 		for (int i = 0; i < players.size(); i++) {
 			g2.setColor(Color.WHITE);
 			g2.fill(players.get(i));
-			g2.setFont(new Font("Arial", 50, 50));
-			g2.setColor(Color.BLUE);
-			g2.drawString("Rect", players.get(i).x, players.get(i).y);
 		}
+		g2.setColor(Color.white);
+		
+		g2.fill(ball.tick());
+		System.out.println("controller:"+Controller.ballX + " : " + Controller.ballY);
 		g2.dispose();
 	}
 
