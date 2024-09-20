@@ -12,10 +12,10 @@ public class Player {
 	public List<Rectangle> tick() {
 		List<Rectangle> rects = new ArrayList<Rectangle>();
 		Rectangle left  = new Rectangle();
-		left.setBounds(Controller.leftX, (int) Controller.leftY, 10, Controller.leftHeight);
+		left.setBounds(Controller.leftX, (int) Controller.leftY, 15, Controller.leftHeight);
 		rects.add(left);
 		Rectangle right = new Rectangle();
-		right.setBounds(Controller.rightX, (int) Controller.rightY, 10, Controller.rightHeight);
+		right.setBounds(Controller.rightX, (int) Controller.rightY, 15, Controller.rightHeight);
 		rects.add(right);
 		return rects;
 	}

@@ -21,16 +21,16 @@ public class Ball {
 		}
 
 		if (Controller.ballHorizontalDirection) {
-			Controller.ballX += (1 * Controller.ballHorizontalSpeed) / 10000;
+			Controller.ballX += (Controller.ballHorizontalSpeedMultiplier * Controller.ballHorizontalSpeed);
 		}
 		if (!Controller.ballHorizontalDirection) {
-			Controller.ballX -= (1 * Controller.ballHorizontalSpeed) / 10000;
+			Controller.ballX -= (Controller.ballHorizontalSpeedMultiplier * Controller.ballHorizontalSpeed);
 		}
 		if (Controller.ballVerticalDirection) {
-			Controller.ballY += (1 * Controller.ballVerticalSpeed) / 10000;
+			Controller.ballY += (Controller.ballVerticalSpeedMultiplier * Controller.ballVerticalSpeed);
 		}
 		if (!Controller.ballVerticalDirection) {
-			Controller.ballY -= (1 * Controller.ballVerticalSpeed) / 10000;
+			Controller.ballY -= (Controller.ballVerticalSpeedMultiplier * Controller.ballVerticalSpeed);
 		}
 		
 		return ball;
