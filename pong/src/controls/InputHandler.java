@@ -16,7 +16,6 @@ public class InputHandler implements KeyListener, FocusListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-    	System.out.println("Key Pressed: "+ e.getKeyChar()+", "+e.getKeyCode());
         int keyCode = e.getKeyCode();
         if (keyCode > 0 && keyCode < key.length) {
             key[keyCode] = true;

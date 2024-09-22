@@ -8,7 +8,7 @@ public class Display {
 		JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
-        frame.setTitle("MathBlock");
+        frame.setTitle("Pong");
         GamePanel game = new GamePanel();
         frame.add(game);
         frame.pack();

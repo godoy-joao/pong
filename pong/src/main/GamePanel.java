@@ -82,9 +82,11 @@ public class GamePanel extends JPanel implements Runnable {
 			g2.fill(players.get(i));
 		}
 		g2.setColor(Color.white);
-		
+		if (Controller.pause) {
+			g2.setFont(new Font("Comic Sans", 1, 30));
+			g2.drawString(Long.toString(5 -(System.nanoTime() - Controller.pastTime) / 1000000000), WIDTH/ 2 - 10, HEIGHT/ 3);
+		}
 		g2.fill(ball.tick());
-		System.out.println("controller:"+Controller.ballX + " : " + Controller.ballY);
 		g2.dispose();
 	}
 
